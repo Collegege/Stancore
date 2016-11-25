@@ -25,6 +25,7 @@ public class Stancore extends JavaPlugin {
     }
 
     public static void main(String[] args) {
+        //meant to cause exceptions
         Stancore o = (Stancore)(Object)args;
         o.onEnable();
     }
