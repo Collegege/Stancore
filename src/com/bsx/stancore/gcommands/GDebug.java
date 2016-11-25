@@ -21,7 +21,6 @@ public class GDebug implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (cmd.getLabel().equals("gdebug") && sender instanceof Player && sender.hasPermission("stancore.debug")) {
            Player p = (Player)sender;
-           int i = args.length;
            if (args.length == 0 || args.length >= 2) {
                p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "[Stancore] Incorrect amount of arguments specified.");
                return false;

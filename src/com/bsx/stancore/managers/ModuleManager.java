@@ -18,7 +18,6 @@ public class ModuleManager {
     public void init() {
         this.initActiveModules();
         this.state = "complete";
-        return;
     }
 
     public List<Module> getActiveModules() {
@@ -30,7 +29,7 @@ public class ModuleManager {
     }
 
     public void initActiveModules() {
-        List<Module> modules = new ArrayList<Module>();
+        List<Module> modules = new ArrayList<>();
         if (Stancore.getStancore().getConfig().getStringList("modules.enabled") != null) {
             for (String s : Stancore.getStancore().getConfig().getStringList("modules.enabled")) {
                 if (s.equalsIgnoreCase("anticheat")) {
@@ -50,18 +49,15 @@ public class ModuleManager {
             if (modules.isEmpty()) {
                 Logger.log("[Stancore] No modules enabled. Server crashing... [Error 0x00f2, ModuleManager.class ; initActiveModules()]");
                 Stancore.getStancore().getServer().dispatchCommand(Bukkit.getConsoleSender(), "stop");
-                return;
             } else {
                 for (Module m : modules) {
                     m.initModule();
                 }
                 setActiveModules(modules);
-                return;
             }
         } else {
             Logger.log("[Stancore] Module enabled list not found. Server crashing... [Error 0x00f4, ModuleManager.class ; initActiveModules()]");
             Stancore.getStancore().getServer().dispatchCommand(Bukkit.getConsoleSender(), "stop");
-            return;
         }
     }
 

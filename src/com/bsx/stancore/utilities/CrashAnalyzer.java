@@ -51,7 +51,6 @@ public class CrashAnalyzer {
                     }
                 }
                 Logger.log("[Stancore] The CrashAnalyzer recognized " + recognizedCrashes + " possible causes of crashes in this server log.");
-                return;
             } catch (FileNotFoundException fnfex) {
                 fnfex.printStackTrace();
             }
