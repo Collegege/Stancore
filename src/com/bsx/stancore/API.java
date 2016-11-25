@@ -3,9 +3,6 @@ package com.bsx.stancore;
 import com.bsx.stancore.managers.ModuleManager;
 import com.bsx.stancore.utilities.Logger;
 
-/**
- * Created by Bradley on 11/24/16.
- */
 public class API {
     private ModuleManager moduleManager;
     private boolean pluginEnabled = false;

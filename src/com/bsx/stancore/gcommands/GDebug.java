@@ -8,9 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-/**
- * Created by Bradley on 11/25/16.
- */
 public class GDebug implements CommandExecutor {
 
     private Stancore stancore;
@@ -22,7 +19,7 @@ public class GDebug implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getLabel().equals("gdebug") && sender instanceof Player && ((Player)sender).hasPermission("stancore.debug")) {
+        if (cmd.getLabel().equals("gdebug") && sender instanceof Player && sender.hasPermission("stancore.debug")) {
            Player p = (Player)sender;
            int i = args.length;
            if (args.length == 0 || args.length >= 2) {
@@ -44,7 +41,7 @@ public class GDebug implements CommandExecutor {
                                    boolean current = m.getDebugMap().get(p);
                                    m.getDebugMap().remove(p);
                                    m.setDebugMode(p, !current);
-                                   if (!current == true) {
+                                   if (! current) {
                                        p.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "[Stancore] You will now receive debug output from the anticheat module.");
                                    } else {
                                        p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "[Stancore] You will now not receive debug output from the anticheat module.");

@@ -5,9 +5,6 @@ import org.bukkit.entity.Player;
 
 import java.util.HashMap;
 
-/**
- * Created by Bradley on 11/24/16.
- */
 public class AnticheatModule extends Module {
     private boolean enabled;
 

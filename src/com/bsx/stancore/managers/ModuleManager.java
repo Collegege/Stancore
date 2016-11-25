@@ -12,9 +12,6 @@ import org.bukkit.Bukkit;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Bradley on 11/23/16.
- */
 public class ModuleManager {
     private String state = "";
     private List<Module> am;
@@ -24,12 +21,12 @@ public class ModuleManager {
         return;
     }
 
-    public void setActiveModules(List<Module> am) {
-        this.am = am;
-    }
-
     public List<Module> getActiveModules() {
         return this.am;
+    }
+
+    public void setActiveModules(List<Module> am) {
+        this.am = am;
     }
 
     public void initActiveModules() {

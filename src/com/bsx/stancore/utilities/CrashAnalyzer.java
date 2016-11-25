@@ -2,12 +2,12 @@ package com.bsx.stancore.utilities;
 
 import com.bsx.stancore.Stancore;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.stream.Stream;
 
-/**
- * Created by Bradley on 11/24/16.
- */
 public class CrashAnalyzer {
     //in development
     private Stancore stancore;
