@@ -41,13 +41,13 @@ public class ModuleManager {
                 } else if (s.equalsIgnoreCase("practice")) {
                     modules.add(new PracticeModule());
                 } else {
-                    Logger.log("[Stancore] Error parsing through modules.enabled in config.yml. Server crashing... [Error 0x00f1, ModuleManager.class ; initActiveModules()]");
+                    Logger.log("[Stancore] Error parsing through modules.enabled in config.yml. Server safe-crashing... [Error 0x00f1, ModuleManager.class ; initActiveModules()]");
                     Stancore.getStancore().getServer().dispatchCommand(Bukkit.getConsoleSender(), "stop");
                     return;
                 }
             }
             if (modules.isEmpty()) {
-                Logger.log("[Stancore] No modules enabled. Server crashing... [Error 0x00f2, ModuleManager.class ; initActiveModules()]");
+                Logger.log("[Stancore] No modules enabled. Server safe-crashing... [Error 0x00f2, ModuleManager.class ; initActiveModules()]");
                 Stancore.getStancore().getServer().dispatchCommand(Bukkit.getConsoleSender(), "stop");
             } else {
                 for (Module m : modules) {
@@ -56,7 +56,7 @@ public class ModuleManager {
                 setActiveModules(modules);
             }
         } else {
-            Logger.log("[Stancore] Module enabled list not found. Server crashing... [Error 0x00f4, ModuleManager.class ; initActiveModules()]");
+            Logger.log("[Stancore] Module enabled list not found. Server safe-crashing... [Error 0x00f4, ModuleManager.class ; initActiveModules()]");
             Stancore.getStancore().getServer().dispatchCommand(Bukkit.getConsoleSender(), "stop");
         }
     }
