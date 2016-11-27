@@ -64,12 +64,7 @@ public class GDebug implements CommandExecutor {
                            if (m.hasDebugModeEnabled(p)) {
                                continue;
                            } else {
-                               if (m.getDebugMap().containsKey(p)) {
-                                   m.getDebugMap().remove(p);
-                                   m.setDebugMode(p, true);
-                               } else {
-                                   m.setDebugMode(p, true);
-                               }
+                               m.setDebugMode(p, true);
                            }
                        }
                        p.sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "[Stancore] You will now receive debug output from every module.");

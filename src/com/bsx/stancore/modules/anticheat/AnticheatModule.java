@@ -1,5 +1,6 @@
 package com.bsx.stancore.modules.anticheat;
 
+import com.bsx.stancore.modules.anticheat.objects.Check;
 import com.bsx.stancore.objects.Module;
 import org.bukkit.entity.Player;
 
@@ -8,6 +9,7 @@ import java.util.HashMap;
 public class AnticheatModule extends Module {
     private boolean enabled;
 
+    private HashMap<Check, Boolean> checks;
     private HashMap<Player, Boolean> debugMap;
 
     private boolean initialized;
@@ -15,6 +17,19 @@ public class AnticheatModule extends Module {
     @Override
     public HashMap<Player, Boolean> getDebugMap() {
         return debugMap;
+    }
+
+    public HashMap<Check, Boolean> getCheckStatus() {
+        return checks;
+    }
+
+    public void setCheckStatus(Check c, boolean b) {
+        if (getCheckStatus().containsKey(c)) {
+            getCheckStatus().remove(c);
+            getCheckStatus().put(c, b);
+        } else {
+            getCheckStatus().put(c, b);
+        }
     }
 
     @Override

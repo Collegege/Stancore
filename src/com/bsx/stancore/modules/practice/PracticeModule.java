@@ -1,6 +1,7 @@
 package com.bsx.stancore.modules.practice;
 
 import com.bsx.stancore.objects.Module;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.HashMap;
@@ -48,5 +49,11 @@ public class PracticeModule extends Module{
     @Override
     public String getModuleName() {
         return "practice";
+    }
+
+    public void sendDebugOutputTo(Player p, String message) {
+        if (hasDebugModeEnabled(p)) {
+            p.sendMessage(ChatColor.RED + "" + ChatColor.BOLD + "[Stancore-Debug: Practice] " + message + ".");
+        }
     }
 }

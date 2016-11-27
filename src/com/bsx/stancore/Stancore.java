@@ -1,6 +1,7 @@
 package com.bsx.stancore;
 
 import com.bsx.stancore.gcommands.GDebug;
+import com.bsx.stancore.gcommands.GHelp;
 import com.bsx.stancore.utilities.CrashAnalyzer;
 import com.bsx.stancore.utilities.Logger;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -9,6 +10,7 @@ public class Stancore extends JavaPlugin {
     private API api;
     private static Stancore stancore;
     public void onEnable() {
+        //make sure to use listener priorities
         Stancore.stancore = this;
         this.api = new API(true);
         this.api.init();
@@ -34,5 +36,6 @@ public class Stancore extends JavaPlugin {
 
     public void registerCommands() {
         new GDebug(this);
+        new GHelp(this);
     }
 }
